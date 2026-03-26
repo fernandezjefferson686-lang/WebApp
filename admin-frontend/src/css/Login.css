@@ -1,0 +1,473 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 100%; height: 100%; margin: 0 !important; padding: 0 !important; }
+#root { width: 100%; min-height: 100vh; }
+
+/* ── Full-page layout ── */
+.login-page {
+  display: flex;
+  width: 100vw;
+  min-height: 100vh;
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* ── Left panel — branding ── */
+.login-left {
+  flex: 1;
+  background: #0f172a;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 64px 72px;
+  position: relative;
+  overflow: hidden;
+}
+
+.login-left::before {
+  content: '';
+  position: absolute;
+  width: 420px; height: 420px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(99,179,255,0.12);
+  top: -80px; left: -100px;
+}
+.login-left::after {
+  content: '';
+  position: absolute;
+  width: 280px; height: 280px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(59,130,246,0.15) 0%, transparent 70%);
+  bottom: 60px; right: -60px;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 64px;
+}
+
+.brand-logo-icon {
+  width: 46px; height: 46px;
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px;
+  box-shadow: 0 8px 24px rgba(59,130,246,0.4);
+}
+
+.brand-logo-text {
+  font-family: 'DM Serif Display', serif;
+  font-size: 20px;
+  color: #fff;
+  letter-spacing: 0.3px;
+}
+
+.login-left-headline {
+  font-family: 'DM Serif Display', serif;
+  font-size: 44px;
+  line-height: 1.18;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.login-left-headline em {
+  color: #60a5fa;
+  font-style: italic;
+}
+
+.login-left-sub {
+  font-size: 15px;
+  color: #94a3b8;
+  line-height: 1.7;
+  max-width: 360px;
+  margin-bottom: 56px;
+}
+
+.login-left-features {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.login-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.feature-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: #3b82f6;
+  flex-shrink: 0;
+}
+
+.login-feature-item span {
+  font-size: 14px;
+  color: #cbd5e1;
+}
+
+/* ── Right panel — form ── */
+.login-right {
+  width: 480px;
+  flex-shrink: 0;
+  background: #f8fafc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 52px;
+}
+
+.login-box { width: 100%; }
+
+.login-box-header { margin-bottom: 36px; }
+
+.login-box-header h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 30px;
+  color: #0f172a;
+  margin-bottom: 6px;
+}
+
+.login-box-header p {
+  font-size: 14px;
+  color: #64748b;
+}
+
+/* Form groups */
+.login-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 18px;
+}
+
+.login-field label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #475569;
+}
+
+.input-wrap { position: relative; }
+
+.input-wrap .input-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.login-field input {
+  width: 100%;
+  padding: 12px 14px 12px 42px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 14px;
+  font-family: 'DM Sans', sans-serif;
+  color: #0f172a;
+  background: #fff;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.login-field input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59,130,246,0.12);
+}
+
+.login-field input::placeholder { color: #94a3b8; }
+
+/* ── Submit button ── */
+.login-btn {
+  width: 100%;
+  padding: 13px;
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: 'DM Sans', sans-serif;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.15s, box-shadow 0.2s;
+  box-shadow: 0 4px 16px rgba(59,130,246,0.4);
+  letter-spacing: 0.2px;
+  margin-bottom: 0;
+}
+
+.login-btn:hover:not(:disabled) {
+  opacity: 0.92;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(59,130,246,0.45);
+}
+
+.login-btn:disabled { opacity: 0.65; cursor: not-allowed; }
+
+/* ── Forgot password link — centred below button ── */
+.login-footer-note {
+  text-align: center;
+  font-size: 13px;
+  color: #64748b;
+  margin: 0;
+}
+
+.forgot-link {
+  font-size: 13px;
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.forgot-link:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
+}
+
+/* ── Error message ── */
+.login-error {
+  margin-top: 16px;
+  padding: 10px 14px;
+  background: #fee2e2;
+  border: 1px solid #fca5a5;
+  border-radius: 8px;
+  color: #991b1b;
+  font-size: 13px;
+  text-align: center;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .login-left { display: none; }
+  .login-right { width: 100%; padding: 40px 28px; }
+}
+/* ================================================================
+   FIELD JIGGLE + RED ERROR + AUTO FADE-OUT
+   Add this to the bottom of your admin login.css
+   ================================================================
+   Timeline:
+     0ms   → jiggle + red appears instantly
+     600ms → jiggle stops, red stays
+     400ms → red starts fading (CSS 0.2s transition)
+     600ms → fully gone
+   ================================================================ */
+
+/* Move error banner above fields — already handled in JSX,
+   just make sure it has bottom margin */
+.login-error {
+  margin-bottom: 16px !important;
+  margin-top: 0 !important;
+}
+
+/* ── Jiggle keyframe ── */
+@keyframes field-jiggle {
+  0%   { transform: translateX(0);    }
+  15%  { transform: translateX(-8px); }
+  30%  { transform: translateX(7px);  }
+  45%  { transform: translateX(-6px); }
+  60%  { transform: translateX(4px);  }
+  75%  { transform: translateX(-3px); }
+  88%  { transform: translateX(2px);  }
+  100% { transform: translateX(0);    }
+}
+
+/* ── Active jiggle ── */
+.input-wrap.field-jiggle {
+  animation: field-jiggle 0.6s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+.input-wrap.field-jiggle input {
+  border-color:     #ef4444 !important;
+  background-color: #fff5f5 !important;
+  box-shadow:       0 0 0 3px rgba(239, 68, 68, 0.18) !important;
+}
+
+/* ── Persistent red after jiggle ── */
+.input-wrap.field-error input {
+  border-color:     #ef4444 !important;
+  background-color: #fff5f5 !important;
+  box-shadow:       0 0 0 3px rgba(239, 68, 68, 0.18) !important;
+  transition:
+    border-color     0.2s ease,
+    background-color 0.2s ease,
+    box-shadow       0.2s ease;
+}
+
+/* ── Fading: red dissolves ── */
+.input-wrap.field-fading input {
+  border-color:     #e2e8f0 !important;
+  background-color: #ffffff !important;
+  box-shadow:       none !important;
+  transition:
+    border-color     0.2s ease,
+    background-color 0.2s ease,
+    box-shadow       0.2s ease;
+}
+
+/* ── Placeholder red / fade ── */
+.input-wrap.field-jiggle input::placeholder,
+.input-wrap.field-error   input::placeholder {
+  color:      #f87171 !important;
+  transition: color 0.2s ease;
+}
+.input-wrap.field-fading input::placeholder {
+  color:      #94a3b8 !important;
+  transition: color 0.2s ease;
+}
+
+/* ── Label red / fade ── */
+.login-field label.label-error {
+  color:      #ef4444 !important;
+  transition: color 0.2s ease;
+}
+.login-field label.label-fading {
+  color:      #475569 !important;
+  transition: color 0.2s ease;
+}
+
+/* ── Icon tint red / fade ── */
+.input-icon.icon-error {
+  filter:     sepia(1) saturate(6) hue-rotate(310deg) brightness(0.85);
+  opacity:    1 !important;
+  transition: filter 0.2s ease, opacity 0.2s ease;
+}
+.input-icon.icon-fading {
+  filter:     none;
+  opacity:    0.5;
+  transition: filter 0.2s ease, opacity 0.2s ease;
+}
+/* ================================================================
+   FIELD JIGGLE + RED ERROR + AUTO FADE-OUT
+   ── Add to student login.css  (uses .auth-input-wrap)
+   ── Add to admin   login.css  (uses .input-wrap)
+   ================================================================
+   Timeline per field:
+     0ms   → jiggle + red instantly
+     600ms → jiggle stops, red stays
+     400ms → red starts fading (0.2s CSS transition)
+     600ms → fully gone
+   ================================================================ */
+
+/* ── Error banner: fix margin so it sits above fields ── */
+.auth-error,
+.login-error {
+  margin-top:    0        !important;
+  margin-bottom: 20px     !important;
+}
+
+/* ── Jiggle keyframe ── */
+@keyframes field-jiggle {
+  0%   { transform: translateX(0);    }
+  15%  { transform: translateX(-8px); }
+  30%  { transform: translateX(7px);  }
+  45%  { transform: translateX(-6px); }
+  60%  { transform: translateX(4px);  }
+  75%  { transform: translateX(-3px); }
+  88%  { transform: translateX(2px);  }
+  100% { transform: translateX(0);    }
+}
+
+/* ════════════════════════════════════════════════
+   STUDENT login  →  .auth-input-wrap
+   ════════════════════════════════════════════════ */
+
+.auth-input-wrap.field-jiggle {
+  animation: field-jiggle 0.6s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+.auth-input-wrap.field-jiggle input {
+  border-color:     #ef4444 !important;
+  background-color: #fff5f5 !important;
+  box-shadow:       0 0 0 3px rgba(239, 68, 68, 0.18) !important;
+}
+.auth-input-wrap.field-error input {
+  border-color:     #ef4444 !important;
+  background-color: #fff5f5 !important;
+  box-shadow:       0 0 0 3px rgba(239, 68, 68, 0.18) !important;
+  transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+.auth-input-wrap.field-fading input {
+  border-color:     #dde3f0 !important;
+  background-color: #ffffff !important;
+  box-shadow:       none !important;
+  transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+.auth-input-wrap.field-jiggle input::placeholder,
+.auth-input-wrap.field-error   input::placeholder {
+  color: #f87171 !important;
+  transition: color 0.2s ease;
+}
+.auth-input-wrap.field-fading input::placeholder {
+  color: #b0bec5 !important;
+  transition: color 0.2s ease;
+}
+
+/* ════════════════════════════════════════════════
+   ADMIN login  →  .input-wrap
+   ════════════════════════════════════════════════ */
+
+.input-wrap.field-jiggle {
+  animation: field-jiggle 0.6s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+.input-wrap.field-jiggle input {
+  border-color:     #ef4444 !important;
+  background-color: #fff5f5 !important;
+  box-shadow:       0 0 0 3px rgba(239, 68, 68, 0.18) !important;
+}
+.input-wrap.field-error input {
+  border-color:     #ef4444 !important;
+  background-color: #fff5f5 !important;
+  box-shadow:       0 0 0 3px rgba(239, 68, 68, 0.18) !important;
+  transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+.input-wrap.field-fading input {
+  border-color:     #e2e8f0 !important;
+  background-color: #ffffff !important;
+  box-shadow:       none !important;
+  transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+.input-wrap.field-jiggle input::placeholder,
+.input-wrap.field-error   input::placeholder {
+  color: #f87171 !important;
+  transition: color 0.2s ease;
+}
+.input-wrap.field-fading input::placeholder {
+  color: #94a3b8 !important;
+  transition: color 0.2s ease;
+}
+
+/* ════════════════════════════════════════════════
+   SHARED — labels + icons (both student & admin)
+   ════════════════════════════════════════════════ */
+
+/* Labels */
+.auth-field  label.label-error,
+.login-field label.label-error {
+  color:      #ef4444 !important;
+  transition: color 0.2s ease;
+}
+.auth-field  label.label-fading,
+.login-field label.label-fading {
+  color:      inherit !important;
+  transition: color 0.2s ease;
+}
+
+/* Icons */
+.auth-input-icon.icon-error,
+.input-icon.icon-error {
+  filter:     sepia(1) saturate(6) hue-rotate(310deg) brightness(0.85);
+  opacity:    1 !important;
+  transition: filter 0.2s ease, opacity 0.2s ease;
+}
+.auth-input-icon.icon-fading,
+.input-icon.icon-fading {
+  filter:     none;
+  opacity:    0.5;
+  transition: filter 0.2s ease, opacity 0.2s ease;
+}

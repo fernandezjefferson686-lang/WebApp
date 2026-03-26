@@ -1,0 +1,49 @@
+/* Center the dashboard content */
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  background-color: #f0f2f5;
+  text-align: center;
+}
+
+/* Heading styling */
+.dashboard-container h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Paragraph styling */
+.dashboard-container p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+/* Links / buttons */
+.dashboard-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.dashboard-links a {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  background-color: #4CAF50;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.dashboard-links a:hover {
+  background-color: #45a049;
+}
+.menu-btn {
+  font-size: 22px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}

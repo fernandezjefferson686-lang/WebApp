@@ -1,0 +1,504 @@
+/* ═══════════════════════════════════════════════════════════
+   login.css  —  Student Counseling System · Login Page
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Page layout ───────────────────────────────────────── */
+.auth-page {
+  display: flex;
+  min-height: 100vh;
+  font-family: "Segoe UI", "Inter", sans-serif;
+  background: #f1f5f9;
+}
+
+/* ── Left decorative panel ─────────────────────────────── */
+.auth-left {
+  flex: 1.1;
+  background: linear-gradient(145deg, #0f1f3d 0%, #1a3461 55%, #1e4080 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px 56px;
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-left::before {
+  content: "";
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.04) 0%, transparent 70%);
+  top: -80px;
+  right: -100px;
+  pointer-events: none;
+}
+
+.auth-left::after {
+  content: "";
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(99,179,237,0.08) 0%, transparent 70%);
+  bottom: 40px;
+  left: -60px;
+  pointer-events: none;
+}
+
+/* Brand */
+.auth-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 48px;
+}
+
+.auth-brand-icon {
+  width: 46px;
+  height: 46px;
+  background: linear-gradient(135deg, #3b82f6, #6366f1);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  box-shadow: 0 4px 14px rgba(59,130,246,0.35);
+}
+
+.auth-brand-name {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 0.02em;
+}
+
+/* Headline */
+.auth-headline {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.2;
+  margin: 0 0 20px;
+}
+
+.auth-headline em {
+  font-style: italic;
+  color: #93c5fd;
+}
+
+/* Subtitle */
+.auth-sub {
+  font-size: 0.92rem;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.65;
+  margin: 0 0 40px;
+  max-width: 360px;
+}
+
+/* Feature list */
+.auth-features {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.auth-feature {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+
+.auth-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #60a5fa;
+  flex-shrink: 0;
+  box-shadow: 0 0 6px rgba(96,165,250,0.6);
+}
+
+/* ── Right form panel ──────────────────────────────────── */
+.auth-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 32px;
+  background: #f8fafc;
+  min-height: 100vh;
+}
+
+/* ── Form box ──────────────────────────────────────────── */
+.auth-box {
+  width: 100%;
+  max-width: 460px;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 44px 44px 38px;
+  box-shadow:
+    0 1px 3px rgba(0,0,0,0.06),
+    0 10px 36px rgba(0,0,0,0.08);
+  border: 1px solid #e8edf5;
+}
+
+.auth-box-header {
+  margin-bottom: 32px;
+}
+
+.auth-box-header h2 {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 6px;
+  letter-spacing: -0.02em;
+}
+
+.auth-box-header p {
+  font-size: 0.875rem;
+  color: #64748b;
+  margin: 0;
+}
+
+/* ── Error banner ──────────────────────────────────────── */
+.auth-error {
+  background: #fff1f2;
+  color: #be123c;
+  border: 1px solid #fda4af;
+  border-left: 4px solid #f43f5e;
+  border-radius: 10px;
+  padding: 11px 14px;
+  font-size: 0.84rem;
+  font-weight: 600;
+  margin-bottom: 22px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ── Form field ────────────────────────────────────────── */
+.auth-field {
+  margin-bottom: 20px;
+}
+
+.auth-field label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #374151;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+/* ── Input wrapper ─────────────────────────────────────── */
+.auth-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.auth-input-wrap input {
+  width: 100%;
+  padding: 12px 14px 12px 40px;
+  border-radius: 10px;
+  border: 1.5px solid #dde3f0;
+  font-size: 0.92rem;
+  color: #1e293b;
+  background: #fff;
+  outline: none;
+  transition: border-color 0.18s, box-shadow 0.18s, background 0.18s;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.auth-input-wrap input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59,130,246,0.12);
+  background: #fafcff;
+}
+
+.auth-input-wrap input::placeholder {
+  color: #b0bec5;
+  font-size: 0.88rem;
+}
+
+/* Left icon inside input */
+.auth-input-icon {
+  position: absolute;
+  left: 12px;
+  font-size: 0.92rem;
+  pointer-events: none;
+  line-height: 1;
+  z-index: 1;
+}
+
+/* Show/Hide text toggle button */
+.auth-eye-btn {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 2px 4px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #3b82f6;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: color 0.15s;
+  font-family: inherit;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.auth-eye-btn:hover {
+  color: #2563eb;
+}
+
+/* ── Extras row ────────────────────────────────────────── */
+.auth-extras {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 6px 0 24px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* ── Link ──────────────────────────────────────────────── */
+.auth-link {
+  color: #3b82f6;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 0.83rem;
+  transition: color 0.15s;
+}
+
+.auth-link:hover {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+/* ── Submit button ─────────────────────────────────────── */
+.auth-btn {
+  width: 100%;
+  padding: 13px;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(135deg, #1e3a5f, #2563eb);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 0.03em;
+  transition: opacity 0.15s, transform 0.12s, box-shadow 0.15s;
+  box-shadow: 0 3px 14px rgba(37,99,235,0.32);
+  font-family: inherit;
+}
+
+.auth-btn:hover:not(:disabled) {
+  opacity: 0.92;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(37,99,235,0.4);
+}
+
+.auth-btn:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(37,99,235,0.25);
+}
+
+.auth-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ── Footer note ───────────────────────────────────────── */
+.auth-footer {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  text-align: center;
+  margin: 18px 0 0;
+}
+
+/* ── Divider (optional) ────────────────────────────────── */
+.auth-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 20px 0;
+  color: #cbd5e1;
+  font-size: 0.75rem;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #e2e8f0;
+}
+
+/* ── Responsive ────────────────────────────────────────── */
+@media (max-width: 820px) {
+  .auth-left {
+    display: none;
+  }
+
+  .auth-right {
+    flex: 1;
+    padding: 40px 20px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .auth-box {
+    padding: 36px 28px 32px;
+    border-radius: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-box {
+    padding: 28px 20px 24px;
+    border-radius: 14px;
+  }
+
+  .auth-box-header h2 {
+    font-size: 1.45rem;
+  }
+}
+/* ================================================================
+   FIELD JIGGLE + RED ERROR + AUTO FADE-OUT
+   ── Add to student login.css  (uses .auth-input-wrap)
+   ── Add to admin   login.css  (uses .input-wrap)
+   ================================================================
+   Timeline per field:
+     0ms   → jiggle + red instantly
+     600ms → jiggle stops, red stays
+     400ms → red starts fading (0.2s CSS transition)
+     600ms → fully gone
+   ================================================================ */
+
+/* ── Error banner: fix margin so it sits above fields ── */
+.auth-error,
+.login-error {
+  margin-top:    0        !important;
+  margin-bottom: 20px     !important;
+}
+
+/* ── Jiggle keyframe ── */
+@keyframes field-jiggle {
+  0%   { transform: translateX(0);    }
+  15%  { transform: translateX(-8px); }
+  30%  { transform: translateX(7px);  }
+  45%  { transform: translateX(-6px); }
+  60%  { transform: translateX(4px);  }
+  75%  { transform: translateX(-3px); }
+  88%  { transform: translateX(2px);  }
+  100% { transform: translateX(0);    }
+}
+
+/* ════════════════════════════════════════════════
+   STUDENT login  →  .auth-input-wrap
+   ════════════════════════════════════════════════ */
+
+.auth-input-wrap.field-jiggle {
+  animation: field-jiggle 0.6s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+.auth-input-wrap.field-jiggle input {
+  border-color:     #ef4444 !important;
+  background-color: #fff5f5 !important;
+  box-shadow:       0 0 0 3px rgba(239, 68, 68, 0.18) !important;
+}
+.auth-input-wrap.field-error input {
+  border-color:     #ef4444 !important;
+  background-color: #fff5f5 !important;
+  box-shadow:       0 0 0 3px rgba(239, 68, 68, 0.18) !important;
+  transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+.auth-input-wrap.field-fading input {
+  border-color:     #dde3f0 !important;
+  background-color: #ffffff !important;
+  box-shadow:       none !important;
+  transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+.auth-input-wrap.field-jiggle input::placeholder,
+.auth-input-wrap.field-error   input::placeholder {
+  color: #f87171 !important;
+  transition: color 0.2s ease;
+}
+.auth-input-wrap.field-fading input::placeholder {
+  color: #b0bec5 !important;
+  transition: color 0.2s ease;
+}
+
+/* ════════════════════════════════════════════════
+   ADMIN login  →  .input-wrap
+   ════════════════════════════════════════════════ */
+
+.input-wrap.field-jiggle {
+  animation: field-jiggle 0.6s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+.input-wrap.field-jiggle input {
+  border-color:     #ef4444 !important;
+  background-color: #fff5f5 !important;
+  box-shadow:       0 0 0 3px rgba(239, 68, 68, 0.18) !important;
+}
+.input-wrap.field-error input {
+  border-color:     #ef4444 !important;
+  background-color: #fff5f5 !important;
+  box-shadow:       0 0 0 3px rgba(239, 68, 68, 0.18) !important;
+  transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+.input-wrap.field-fading input {
+  border-color:     #e2e8f0 !important;
+  background-color: #ffffff !important;
+  box-shadow:       none !important;
+  transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+.input-wrap.field-jiggle input::placeholder,
+.input-wrap.field-error   input::placeholder {
+  color: #f87171 !important;
+  transition: color 0.2s ease;
+}
+.input-wrap.field-fading input::placeholder {
+  color: #94a3b8 !important;
+  transition: color 0.2s ease;
+}
+
+/* ════════════════════════════════════════════════
+   SHARED — labels + icons (both student & admin)
+   ════════════════════════════════════════════════ */
+
+/* Labels */
+.auth-field  label.label-error,
+.login-field label.label-error {
+  color:      #ef4444 !important;
+  transition: color 0.2s ease;
+}
+.auth-field  label.label-fading,
+.login-field label.label-fading {
+  color:      inherit !important;
+  transition: color 0.2s ease;
+}
+
+/* Icons */
+.auth-input-icon.icon-error,
+.input-icon.icon-error {
+  filter:     sepia(1) saturate(6) hue-rotate(310deg) brightness(0.85);
+  opacity:    1 !important;
+  transition: filter 0.2s ease, opacity 0.2s ease;
+}
+.auth-input-icon.icon-fading,
+.input-icon.icon-fading {
+  filter:     none;
+  opacity:    0.5;
+  transition: filter 0.2s ease, opacity 0.2s ease;
+}
